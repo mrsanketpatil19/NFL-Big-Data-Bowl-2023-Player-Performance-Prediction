@@ -1,0 +1,29 @@
+<svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="smallShieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#013369;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#013369;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d50a0a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Shape -->
+  <path d="M30 3 L54 13 L54 27 L30 37 L6 27 L6 13 Z" 
+        fill="url(#smallShieldGradient)" 
+        stroke="#ffffff" 
+        stroke-width="1"/>
+  
+  <!-- Football -->
+  <ellipse cx="30" cy="12" rx="4" ry="2" fill="#ffffff"/>
+  
+  <!-- Stars (4 total) -->
+  <g fill="#ffffff">
+    <polygon points="20,8 21,10 23,10 21.5,11 22,13 20,12 18,13 18.5,11 17,10 19,10"/>
+    <polygon points="25,6 26,8 28,8 26.5,9 27,11 25,10 23,11 23.5,9 22,8 24,8"/>
+    <polygon points="35,8 36,10 38,10 36.5,11 37,13 35,12 33,13 33.5,11 32,10 34,10"/>
+    <polygon points="40,6 41,8 43,8 41.5,9 42,11 40,10 38,11 38.5,9 37,8 39,8"/>
+  </g>
+  
+  <!-- NFL Text -->
+  <text x="30" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8" font-weight="bold">NFL</text>
+</svg> 

@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block title %}About NFL Rushing Predictor{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center mb-5">
+                <div class="nfl-hero-image-container mb-4" style="max-width: 400px; margin: 0 auto;">
+                    <img src="{{ url_for('static', path='/img/nfl-hero-image.jpg') }}" alt="NFL Integrity" class="nfl-hero-image">
+                    <div class="nfl-hero-overlay">
+                        <div class="nfl-badge-enhanced">
+                            NFL Analytics Platform
+                        </div>
+                    </div>
+                </div>
+                <h1 class="display-4 fw-bold mb-3">About NFL Rushing Predictor</h1>
+                <p class="lead">Harnessing the power of machine learning to analyze and predict NFL rushing performance</p>
+                <hr class="my-4">
+            </div>
+
+            <!-- Project Overview -->
+            <section class="mb-5">
+                <h2 class="mb-4">Project Overview</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <p class="lead">The NFL Rushing Predictor is an advanced analytics platform that uses machine learning to predict rushing yards on any given play with remarkable accuracy.</p>
+                        <p>Our model analyzes multiple factors including player attributes, game situation, defensive alignment, and player tracking data to provide accurate predictions that help coaches, analysts, and fans understand the game at a deeper level.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-graph-up-arrow display-1 text-primary mb-3"></i>
+                                <h3>Model Performance</h3>
+                                <div class="row mt-4">
+                                    <div class="col-6 mb-3">
+                                        <div class="display-6 fw-bold text-success">3.42</div>
+                                        <div class="text-muted">Mean Absolute Error (yards)</div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="display-6 fw-bold text-info">28%</div>
+                                        <div class="text-muted">Better than traditional models</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="display-6 fw-bold text-primary">20+</div>
+                                        <div class="text-muted">Features analyzed</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology -->
+            <section class="mb-5">
+                <h2 class="mb-4">Methodology</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-database-gear display-4 text-primary"></i>
+                                </div>
+                                <h4 class="card-title text-center">Data Collection</h4>
+                                <p class="card-text">We collect and process data from multiple sources including NFL's Next Gen Stats, play-by-play data, and player tracking data to build a comprehensive dataset for analysis.</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Player tracking data</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Play-by-play statistics</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced metrics</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Historical game data</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-cpu display-4 text-primary"></i>
+                                </div>
+                                <h4 class="card-title text-center">Machine Learning</h4>
+                                <p class="card-text">Our ensemble model combines the strengths of multiple algorithms to deliver superior prediction accuracy.</p>
+                                <div class="mt-4">
+                                    <h5 class="h6">Model Components:</h5>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>XGBoost Regressor</span>
+                                        <span class="badge bg-primary">Primary</span>
+                                    </div>
+                                    <div class="progress mb-3" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Stacking Ensemble</span>
+                                        <span class="badge bg-info">Secondary</span>
+                                    </div>
+                                    <div class="progress mb-3" style="height: 8px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%"></div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Feature Engineering</span>
+                                        <span class="badge bg-success">Key</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-graph-up-arrow display-4 text-primary"></i>
+                                </div>
+                                <h4 class="card-title text-center">Feature Engineering</h4>
+                                <p class="card-text">We derive meaningful features from raw data to improve model performance:</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Player Speed
+                                        <span class="badge bg-primary rounded-pill">High Impact</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Defensive Formation
+                                        <span class="badge bg-primary rounded-pill">High Impact</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Down & Distance
+                                        <span class="badge bg-primary rounded-pill">High Impact</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Player Direction
+                                        <span class="badge bg-info rounded-pill">Medium Impact</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Field Position
+                                        <span class="badge bg-info rounded-pill">Medium Impact</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NFL Rushing Analytics -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4">Understanding NFL Rushing</h2>
+                        <p class="lead">Rushing is a fundamental aspect of American football that can significantly impact game outcomes.</p>
+                        
+                        <h4 class="mt-4">Key Rushing Statistics</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Statistic</th>
+                                        <th>Description</th>
+                                        <th>NFL Average</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Yards per Carry (YPC)</td>
+                                        <td>Average yards gained per rushing attempt</td>
+                                        <td>4.2 yds</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Success Rate</td>
+                                        <td>Percentage of successful running plays</td>
+                                        <td>42%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Broken Tackles</td>
+                                        <td>Number of times a runner breaks a tackle</td>
+                                        <td>0.15/att</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yards After Contact</td>
+                                        <td>Yards gained after initial contact</td>
+                                        <td>2.8 yds</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h4 class="mt-4">Factors Affecting Rushing Success</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Offensive Factors</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Offensive line performance</li>
+                                            <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Running back vision and patience</li>
+                                            <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Play design and scheme</li>
+                                            <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Quarterback threat</li>
+                                            <li><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Formation and personnel</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Defensive Factors</h5>
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Defensive front alignment</li>
+                                            <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Linebacker flow and gap discipline</li>
+                                            <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Defensive scheme (3-4 vs 4-3)</li>
+                                            <li class="mb-2"><i class="bi bi-shield-shaded text-danger me-2"></i>Defensive back run support</li>
+                                            <li><i class="bi bi-shield-shaded text-danger me-2"></i>Pre-snap adjustments</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="card shadow-sm sticky-top" style="top: 20px;">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">NFL Rushing Milestones</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Most Career Rushing Yards</h6>
+                                            <small>18,355</small>
+                                        </div>
+                                        <p class="mb-1 small">Emmitt Smith (1990-2004)</p>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Single Season Record</h6>
+                                            <small>2,105</small>
+                                        </div>
+                                        <p class="mb-1 small">Eric Dickerson (1984)</p>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Single Game Record</h6>
+                                            <small>296</small>
+                                        </div>
+                                        <p class="mb-1 small">Adrian Peterson (2007)</p>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Best Career YPC (min 750 att)</h6>
+                                            <small>5.22</small>
+                                        </div>
+                                        <p class="mb-1 small">Michael Vick (2001-2015)</p>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Most Rushing TDs (Career)</h6>
+                                            <small>164</small>
+                                        </div>
+                                        <p class="mb-1 small">Emmitt Smith (1990-2004)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <h5>Rushing in Modern NFL</h5>
+                                    <p class="small">While passing has become more prominent, an effective running game remains crucial for controlling the clock, managing leads, and setting up play-action passes.</p>
+                                    <div class="progress mb-2" style="height: 10px;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between small text-muted">
+                                        <span>Passing</span>
+                                        <span>Rushing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- FAQ -->
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How accurate is the prediction model?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our model achieves a mean absolute error of 3.42 yards, which means on average, our predictions are within 3.42 yards of the actual rushing yards gained. The model's accuracy can vary based on game situations, with higher accuracy in standard down-and-distance scenarios compared to unusual or trick plays.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What data sources do you use?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We utilize multiple data sources including NFL's Next Gen Stats for player tracking data, official NFL play-by-play data, Pro Football Reference for historical statistics, and our own proprietary data collection. Our model is trained on several seasons of data to ensure robustness and account for various game situations and player performance levels.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Can I use this for fantasy football?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! While our primary focus is on individual play predictions, the insights can be valuable for fantasy football decisions. We recommend using our predictions as part of a comprehensive fantasy analysis that includes factors like matchups, injuries, and team strategies. Many of our users find the success probability metric particularly helpful for making start/sit decisions.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How often is the model updated?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We continuously monitor model performance and update it at several key points throughout the NFL season. Major updates occur during the offseason to incorporate the previous season's data. During the season, we implement minor adjustments weekly to account for team and player performance trends. All updates are thoroughly tested to ensure they improve prediction accuracy before being deployed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center py-5 bg-light rounded-3 mb-5">
+                <h2 class="display-5 fw-bold mb-3">Ready to Get Started?</h2>
+                <p class="lead mb-4">Try our NFL Rushing Predictor today and gain valuable insights into running plays.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="/predict" class="btn btn-primary btn-lg px-4 gap-3">Make a Prediction</a>
+                    <a href="/" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+{% endblock %}

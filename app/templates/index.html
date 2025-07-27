@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, var(--nfl-blue) 0%, var(--nfl-dark-blue) 50%, var(--nfl-light-blue) 100%);
+        padding: 5rem 0;
+        color: white;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+        margin: 20px;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-13.807-11.193-25-25-25s-25 11.193-25 25 11.193 25 25 25 25-11.193 25-25zm0 0c0 13.807 11.193 25 25 25s25-11.193 25-25-11.193-25-25-25-25 11.193-25 25z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 50px 50px;
+        animation: float 20s ease-in-out infinite;
+    }
+    
+    .feature-icon {
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        background: linear-gradient(135deg, var(--nfl-blue), var(--nfl-light-blue));
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .stat-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 32px rgba(1, 51, 105, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(1, 51, 105, 0.2);
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        color: var(--nfl-blue);
+        font-family: 'Anton', sans-serif;
+    }
+    
+    .bg-gradient {
+        background: linear-gradient(45deg, var(--nfl-blue), var(--nfl-light-blue));
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4" style="position: relative; z-index: 1;">
+                        <i class="bi bi-trophy-fill me-3 text-warning"></i>Predict NFL Rushing Performance with AI
+                    </h1>
+                    <p class="lead mb-4" style="position: relative; z-index: 1;">Leverage advanced machine learning to predict rushing yards in NFL games with high accuracy.</p>
+                    <div class="d-grid gap-2 d-md-flex" style="position: relative; z-index: 1;">
+                        <a href="/predict" class="btn btn-light btn-lg me-md-2">
+                            <i class="bi bi-lightning-charge me-2"></i>Try Predictor
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-info-circle me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="text-center" style="position: relative; z-index: 1;">
+                        <div class="nfl-hero-image-container mb-4">
+                            <img src="{{ url_for('static', path='/img/nfl-hero-image.jpg') }}" alt="NFL Integrity" class="nfl-hero-image">
+                            <div class="nfl-hero-overlay">
+                                <div class="nfl-badge-enhanced">
+                                    Official NFL Analytics
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Features -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5">Why Use Our Predictor?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary bg-gradient text-white rounded-circle p-3 mb-3 mx-auto">
+                            <i class="bi bi-speedometer2 display-6"></i>
+                        </div>
+                        <h3 class="h4">Real-time Analysis</h3>
+                        <p class="text-muted">Get instant predictions based on the latest player tracking data and game conditions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-success bg-gradient text-white rounded-circle p-3 mb-3 mx-auto">
+                            <i class="bi bi-graph-up-arrow display-6"></i>
+                        </div>
+                        <h3 class="h4">Advanced Analytics</h3>
+                        <p class="text-muted">Leverage machine learning models trained on thousands of NFL plays.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-info bg-gradient text-white rounded-circle p-3 mb-3 mx-auto">
+                            <i class="bi bi-people display-6"></i>
+                        </div>
+                        <h3 class="h4">Player Insights</h3>
+                        <p class="text-muted">Understand how different factors impact player performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">1</div>
+                            <h3>Input Play Data</h3>
+                            <p>Enter the game situation, player metrics, and defensive alignment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">2</div>
+                            <h3>AI Analysis</h3>
+                            <p>Our models process the data using advanced algorithms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">3</div>
+                            <h3>Get Predictions</h3>
+                            <p>Receive accurate rushing yard predictions with confidence scores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/predict" class="btn btn-primary btn-lg">Try It Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFL Stats Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">NFL Rushing Statistics</h2>
+                    <p class="lead">Understanding the importance of the running game in the NFL.</p>
+                    <p>Rushing remains a fundamental aspect of American football, with elite running backs consistently demonstrating the ability to change the course of a game. The modern NFL has seen an evolution in rushing strategies, from traditional power running to zone schemes and RPO (Run-Pass Option) plays.</p>
+                    <p>Our predictor analyzes key metrics that influence rushing success, including:</p>
+                    <ul>
+                        <li>Player speed and acceleration</li>
+                        <li>Defensive alignment and personnel</li>
+                        <li>Game situation (down, distance, score)</li>
+                        <li>Offensive line performance</li>
+                    </ul>
+                    <a href="/about" class="btn btn-outline-primary mt-3">Learn More About NFL Rushing</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div id="statsChart" style="height: 400px;">
+                                <!-- Fallback content if chart doesn't load -->
+                                <div id="chartFallback" class="text-center py-5 text-muted">
+                                    <i class="bi bi-bar-chart-line display-4 text-primary"></i>
+                                    <h4 class="mt-3 mb-4">Key Rushing Attributes</h4>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Speed:</span>
+                                                <span class="fw-bold text-primary">84%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" style="width: 84%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Agility:</span>
+                                                <span class="fw-bold text-danger">89%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-danger" style="width: 89%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Vision:</span>
+                                                <span class="fw-bold text-warning">94%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 94%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Strength:</span>
+                                                <span class="fw-bold text-info">79%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-info" style="width: 79%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Acceleration:</span>
+                                                <span class="fw-bold text-success">87%</span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-success" style="width: 87%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="nfl-cta-section py-5" style="background: linear-gradient(135deg, #000000 0%, #013369 20%, #1a4a7a 40%, #d50a0a 70%, #8b0000 100%);">
+        <div class="container text-center">
+            <h2 class="mb-4 text-white fw-bold" style="color: #ffffff !important; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); font-weight: 900 !important;">
+                <i class="bi bi-trophy-fill me-2 text-warning"></i>Ready to Predict Rushing Performance?
+            </h2>
+            <p class="lead mb-4 text-white fw-light" style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 600 !important;">Start making data-driven decisions for your fantasy team or football analysis.</p>
+            <a href="/predict" class="btn btn-warning btn-lg px-5 fw-bold">
+                <i class="bi bi-play-fill me-2"></i>Get Started
+            </a>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Initialize any interactive elements on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Example: Initialize a sample visualization
+    const statsData = [
+        {
+            x: ['Speed', 'Agility', 'Vision', 'Strength', 'Acceleration'], 
+            y: [84, 89, 94, 79, 87],
+            type: 'bar',
+            marker: {
+                color: ['#013369', '#d50a0a', '#ffb81c', '#0066cc', '#00a651'],
+                line: {color: '#ffffff', width: 2}
+            },
+            text: ['84%', '89%', '94%', '79%', '87%'],
+            textposition: 'auto',
+            textfont: {color: '#ffffff', size: 12, weight: 'bold'},
+            name: 'RB Skill Attributes'
+        }
+    ];
+    
+    const layout = {
+        title: {
+            text: 'Key Rushing Attributes',
+            font: {size: 18, color: '#013369'}
+        },
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: {color: '#6c757d'},
+        xaxis: {
+            tickangle: 0,
+            tickfont: {size: 12},
+            title: {text: 'Attributes', font: {size: 14, color: '#013369'}}
+        },
+        yaxis: {
+            title: {text: 'Skill Level (%)', font: {size: 14, color: '#013369'}},
+            range: [0, 100]
+        },
+        margin: {t: 60, b: 100, l: 80, r: 50},
+        showlegend: false,
+        height: 350
+    };
+    
+    Plotly.newPlot('statsChart', statsData, layout, {responsive: true}).then(function() {
+        // Hide fallback content when chart loads successfully
+        const fallback = document.getElementById('chartFallback');
+        if (fallback) {
+            fallback.style.display = 'none';
+        }
+    }).catch(function(err) {
+        console.log('Chart failed to load, showing fallback:', err);
+    });
+});
+</script>
+{% endblock %}

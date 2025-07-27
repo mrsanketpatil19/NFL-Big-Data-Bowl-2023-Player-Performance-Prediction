@@ -1,0 +1,43 @@
+<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- NFL Shield Background -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#013369;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#013369;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d50a0a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Shield Shape -->
+  <path d="M100 10 L180 40 L180 80 L100 110 L20 80 L20 40 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#ffffff" 
+        stroke-width="2"
+        filter="url(#glow)"/>
+  
+  <!-- Football in upper section -->
+  <ellipse cx="100" cy="35" rx="15" ry="8" fill="#ffffff"/>
+  <path d="M85 35 L115 35 M100 27 L100 43" stroke="#000000" stroke-width="1" opacity="0.7"/>
+  
+  <!-- Stars (8 total) -->
+  <g fill="#ffffff">
+    <polygon points="70,25 72,30 77,30 73,33 75,38 70,35 65,38 67,33 63,30 68,30"/>
+    <polygon points="80,20 82,25 87,25 83,28 85,33 80,30 75,33 77,28 73,25 78,25"/>
+    <polygon points="90,25 92,30 97,30 93,33 95,38 90,35 85,38 87,33 83,30 88,30"/>
+    <polygon points="100,20 102,25 107,25 103,28 105,33 100,30 95,33 97,28 93,25 98,25"/>
+    <polygon points="110,25 112,30 117,30 113,33 115,38 110,35 105,38 107,33 103,30 108,30"/>
+    <polygon points="120,20 122,25 127,25 123,28 125,33 120,30 115,33 117,28 113,25 118,25"/>
+    <polygon points="130,25 132,30 137,30 133,33 135,38 130,35 125,38 127,33 123,30 128,30"/>
+    <polygon points="140,20 142,25 147,25 143,28 145,33 140,30 135,33 137,28 133,25 138,25"/>
+  </g>
+  
+  <!-- NFL Text -->
+  <text x="100" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">NFL</text>
+</svg> 
