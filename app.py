@@ -252,6 +252,11 @@ print("Initializing models...")
 models, metrics = load_or_train_models()
 
 # API Endpoints
+@app.get("/health")
+async def health_check():
+    """Health check endpoint for Render"""
+    return {"status": "healthy", "message": "NFL Rushing Predictor is running"}
+
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "title": "NFL Rushing Predictor"})
@@ -340,4 +345,6 @@ async def retrain_models():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
