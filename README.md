@@ -15,7 +15,7 @@ A sophisticated machine learning application that predicts NFL rushing performan
 
 - **Mean Absolute Error**: 3.42 yards
 - **Model Type**: Ensemble (XGBoost + Stacking)
-- **Features Analyzed**: 20+ advanced metrics
+- **Features Analyzed**: 5+ advanced metrics
 - **Training Data**: NFL Big Data Bowl 2020 dataset
 
 ## 🛠️ Technology Stack
@@ -139,12 +139,12 @@ print(f"Predicted Rushing Yards: {prediction['predicted_yards']}")
 - **Position Data**: X/Y coordinates on field
 - **Player Demographics**: Height, weight, age
 - **Game Context**: Down, distance, quarter, time remaining
-- **Advanced Features**: Derived metrics and interactions
+- **Advanced Features**: 5+ derived metrics and interactions
 
 ### Model Architecture
 - **Primary Model**: XGBoost Regressor
 - **Ensemble Model**: Stacking (Ridge + RandomForest + XGBoost)
-- **Feature Engineering**: 20+ engineered features
+- **Feature Engineering**: 5+ engineered features
 - **Validation**: Cross-validation with multiple folds
 
 ## 🎨 Design Features
@@ -267,7 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Total Size**: 501MB
 - **Lines of Code**: 1000+
 - **Models**: 2 trained models
-- **Features**: 20+ engineered features
+- **Features**: 5+ engineered features
 - **Accuracy**: 3.42 yards MAE
 
 ---
