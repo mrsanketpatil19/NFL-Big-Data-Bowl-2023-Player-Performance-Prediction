@@ -139,7 +139,7 @@ print(f"Predicted Rushing Yards: {prediction['predicted_yards']}")
 - **Position Data**: X/Y coordinates on field
 - **Player Demographics**: Height, weight, age
 - **Game Context**: Down, distance, quarter, time remaining
-- **Advanced Features**: 5+ derived metrics and interactions
+- **Advanced Features**: Derived metrics and interactions
 
 ### Model Architecture
 - **Primary Model**: XGBoost Regressor
